@@ -1,0 +1,18 @@
+#services-container button{
+    padding: 1em;
+    border-radius: 1em;
+    width: 15em;
+    height: 15em;
+    
+}
+#services-container{
+    display: block;
+    margin: 3em;
+    
+}
+
+button:hover{
+    cursor: pointer;
+    background-color:#BFBFBF;
+
+}

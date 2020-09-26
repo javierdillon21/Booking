@@ -1,0 +1,55 @@
+main{
+    align-self: center;
+}
+
+#main-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header > #logo-container{
+    /* background: #A69856; */
+    padding: 1.5em;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+header h1{
+    margin-left: 0.5em;   
+}
+
+header > h2{
+    background: #A69856;
+    padding: 0.5em 1.5em;
+    color: white;
+}
+
+header img{
+    width: 5em;
+}
+
+main{
+    flex: 1;
+}
+
+footer{
+    background: black;
+    color: white;
+    padding: 1.5em;
+}
+
+@media (max-width: 400px){
+    header{
+        font-size: 0.7em;
+    }
+
+    header > #logo-container{
+        padding: 0.5em;
+        padding-bottom: 0;
+    }
+    header > h2{
+        padding: 0.3em 0.5em;
+    }
+}

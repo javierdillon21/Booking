@@ -1,0 +1,40 @@
+enum Dia{
+  VIERNES
+  SABADO
+  DOMINGO
+  }
+enum Horario{
+  _19H30_21H00
+  _08H00_09H30
+  _09H30_11H00
+  _11H00_12H30
+}
+type Asistente @model @key(fields: ["cedula"]){
+  cedula: ID!
+  nombre: String!
+  apellido: String!
+  fNacimiento: String!
+}
+
+type Reserva @model{
+  id:ID!
+  createdAt: AWSDateTime!
+  asistentesCedulas: [String]!
+  reservador: Asistente @connection(fields: ["reservadorCedula"])
+  servicio: Servicio @connection(fields: ["servicioID"])
+
+  servicioID: ID!
+  reservadorCedula: ID! 
+}
+
+type Servicio @model{
+  id:ID!
+  dia: Dia! 
+  horario: Horario!
+}
+
+# un asistente solo puede reservar para un servicio por semana.
+# las reservas tienen vigencia de cuatro semanas.
+# las reservas pueden ser actualizadas por el admi, no por el usuario. 
+
+
